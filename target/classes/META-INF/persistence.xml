@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="bambii">
+	
+	<!-- entities -->
+		<class>com.bambii.entities.Diaper</class>
+		<class>com.bambii.entities.Feeding</class>
+		<class>com.bambii.entities.Parent</class>
+		<class>com.bambii.entities.Pump</class>
+		<class>com.bambii.entities.Sleep</class>
+	
+	
+	<!-- DB connection settings -->
+		<properties>
+			<property name="javax.persistence.jdbc.url"	value="jdbc:mariadb://localhost:3306/casestudy" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="khan" />
+			<property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
+
+	<!-- JPA/eclipseLink settings-->
+			<property name="eclipselink.target-database" value="MySQL" />
+			<property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
+			<property name="eclipselink.logging.level" value="SEVERE" />
+	<!-- Other settings -->
+		</properties>
+	
+	</persistence-unit>
+</persistence>

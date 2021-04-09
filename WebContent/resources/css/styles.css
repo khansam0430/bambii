@@ -1,0 +1,399 @@
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+form {
+    font-size: 13pt;
+  }
+  
+  .tab{
+  margin-left: 40px;
+  }
+  
+  /* Full-width inputs */
+  input[type=user], input[type=password],  input[type=child] {
+    width: 40%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 28px;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: .8;
+  }
+
+  #main{
+    background-image: linear-gradient(to bottom right, #c76b6b , rgb(245, 245, 245) ); 
+    padding-top: 1px;
+    padding-bottom: 500px;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the avatar image inside this container */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Avatar image */
+  img.logo, .logoSU {
+    width: 9%;
+    opacity: .7;
+  } 
+
+  #navbar{
+  background-color: rgb(255, 255, 255);
+  font: black;
+  margin-bottom: 1%;
+  background-color: white;
+  display: inline-block;
+  position:static;
+  font-size: 14pt;
+  padding-top: 10pt;
+  padding-bottom: 4pt;
+  font-weight:700;
+  width: 96%;
+  }
+
+.logo-nav{
+    float: left; 
+    position: relative;
+    width: 4%;
+    padding: 7pt;
+    opacity: .7;
+}
+
+  .logoSU{
+    padding-top: 50px;
+  }
+  
+  .loginBack{
+    background-image: url("/bambii/resources/images/login_back.png");
+    min-height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 950px;
+    position: relative; 
+    margin-top:  50px;
+    padding-top: 55px;
+    padding-bottom: 25px;
+  } 
+
+  .loginBackSignUp{
+  background-image: url("/bambii/resources/images/login_back.png");
+  min-height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;  
+  background-size: 950px 1200px;
+  }
+            
+  /* Add padding to containers */
+  .form-container, .sign-up-form {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  #notMember{
+    margin-top: 30px;
+  }
+
+  .sign-up-form{
+    position: relative; 
+    font: black;
+    padding-bottom: 25px; 
+  }
+
+  #loginButton {
+    color: white;
+    background-color: rgb(76, 160, 38) ;
+    margin-top: 15px;
+    border-radius: 25px;
+  }
+
+  #signupButton {
+    color: white;
+    background-color: #fa9494 ;
+    border-radius: 28px;
+    margin-top: 20px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }}
+
+  #homepage{
+    background-image: url("/bambii/resources/images/back2.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 30% 60%;
+    background-position: center;
+  }
+
+  #infoDiv{
+    color: rgb(38, 63, 175);
+    font-size: 14pt;
+    font-weight: 700;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+  }
+
+  #resources{
+    color: navy;
+    margin-top: 10%;
+    text-align: center;
+  }
+
+  .feed {
+    background-color: #1ca565;
+    border: none;
+    height: 90px;
+    width: 90px;
+    color: white;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 14pt;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 30%;
+    margin-right: 3%;
+    box-shadow:  0px 5px 5px #2d6151;
+  }
+
+  .sleep{
+    background-color: #1190df;
+    border: none;
+    height: 90px;
+    width: 90px;
+    color: white;
+    border-radius: 10%;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 3%;
+    box-shadow:  0px 5px 5px #155781;
+  }
+
+  .diaper{
+    background-color: #f5b70e;
+    border: none;
+    height: 90px;
+    width: 90px;
+    color: white;
+    border-radius: 10%;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 3%;
+    box-shadow:  0px 5px 5px #806009;
+  }
+
+  .pump{
+    background-color: #ca3155;
+    border: none;
+    height: 90px;
+    width: 90px;
+    color: white;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 14pt;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 3%;
+    box-shadow: 0px 5px 5px #703643;
+  }
+
+  .extra{
+    background-color: #7c43cc;
+    border: none;
+    height: 90px;
+    width: 90px;
+    color: white;
+    border-radius: 10%;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 25%;
+    box-shadow: 0px 5px 5px #493566;
+  }
+
+  #feed-head{
+  text-align: center;
+  margin-top: 130px;
+  margin-bottom: 0px;
+  color: white;
+  background-color: #13a05ed2;
+  }
+  
+  #feed-head:hover, .feed:hover, .bottle:hover,
+  .solids:hover, .leftFeed:hover, .rightFeed:hover{
+    background-color: #1bc878d2;
+  }
+
+#sleep-head{
+  text-align: center;
+  margin-bottom: 0px;
+  color: white;
+  background-color: #1190dfd2;
+  }
+
+  #sleep-head:hover,.sleep:hover{
+    background-color: #38b2fd;
+  }
+
+#diaper-head{
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+  background-color: #f5b70ed2;
+  }
+
+ #diaper-head:hover, .diaper:hover, .wet:hover, .wetAndDirty:hover, .dirty:hover{
+    background-color: #f8ce5a;
+  }
+
+#pump-head{
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+  background-color: #ca3155d2;
+  }
+
+  #pump-head:hover,.pump:hover, .leftPump:hover, .rightPump:hover{
+    background-color: #f33d67;
+  }
+
+#extra-head{
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+  background-color: #7c43ccd2;
+  }
+
+  #extra-head:hover, .extra:hover, .height:hover, .weight:hover, .meds:hover, .other:hover{
+    background-color: #9550f6d2;
+  }
+
+  .bottle, .solids, .leftFeed, .rightFeed{
+    border: none;
+    color: white;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 14pt;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 3%;
+  }
+
+  .bottle{
+    margin-left: 30%;
+   
+  }
+
+  .solids{
+
+  }
+
+  .leftFeed, .rightFeed{
+  }
+
+  .time, .amount, .time-end, .date, .notes{
+    width: 20%;
+    padding: 14px 20px;
+    margin: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 28px;
+  }
+
+  .time{
+    margin-left: 12%;
+  }
+
+  #sleepPageHead{
+    margin-top: 100px;
+  }
+
+  .wet{
+   margin-left: 40%;
+  }
+
+  .wet, .dirty, .wetAndDirty{
+    background-color: #f5b70e;
+    height: 90px;
+    width: 90px;
+    border: none;
+    color: white;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 14pt;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 3%;
+    box-shadow:  0px 5px 5px #806009;
+  }
+
+  .leftPump, .rightPump{
+    background-color: #ca3155;
+    height: 90px;
+    width: 130px;
+    border: none;
+    color: white;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 14pt;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 3%;
+    box-shadow:  0px 5px 5px #703643;
+  }
+
+  .leftPump{
+    margin-left: 40%;
+  }
+
+  .height, .weight, .meds, .other{
+    background-color: #7c43cc;
+    height: 90px;
+    width: 90px;
+    border: none;
+    color: white;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 14pt;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 3%;
+    box-shadow:  0px 5px 5px #493566;
+  }
+
+  .height{
+    margin-left: 38%;
+  }
