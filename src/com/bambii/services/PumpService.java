@@ -30,6 +30,25 @@ public class PumpService extends AbstractDAO implements PumpDao{
 
 		return allPumps;
 	}
+	
+	public Pump getPumpById(int pId) {
+		Pump result = null;
+		//Step 1. Connect to DB
+		connect();
+
+		//Step 2. Execute Transaction
+		try {
+			em.getTransaction().begin();
+			result = em.find(Pump.class, pId);
+			em.getTransaction().commit();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			//Step 3. Disconnect
+			dispose();
+		}
+		return result;
+	}
 
 	@Override
 	public void addPump (Pump pump) throws Exception {
@@ -68,16 +87,15 @@ public class PumpService extends AbstractDAO implements PumpDao{
 	}
 
 	@Override
-	public boolean updatePump(int pId, String pumpType, String pumpTime, 
-			String pumpAmount, String pumpDate) {
+	public boolean updatePump(Integer pId, Pump pump) {
 		connect();
 		try {
 			em.getTransaction().begin();
 			Pump findPump = em.find(Pump.class, pId);
-			findPump.setPumpType(pumpType);
-			findPump.setPumpTime(pumpTime);
-			findPump.setPumpAmount(pumpAmount);
-			findPump.setPumpDate(pumpDate);
+			findPump.setPumpType(pump.getPumpType());
+			findPump.setPumpTime(pump.getPumpTime());
+			findPump.setPumpAmount(pump.getPumpAmount());
+			findPump.setPumpDate(pump.getPumpDate());
 			em.persist(findPump);
 			em.getTransaction().commit();
 			return true;

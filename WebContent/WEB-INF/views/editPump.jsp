@@ -46,26 +46,24 @@
 	</div>
 	<div>
 		<h1 style="color: navy; text-align:center;">
-			<strong><u>Edit a Feeding Entry</u></strong><br><br><br><br>
+			<strong><u>Edit a Pump Entry</u></strong><br><br><br>
 		</h1>
 	</div>
 	<div>
-		<form action = "${model.Feed.id}/save" method="POST">
-            <input type="radio"  id="bottle" name="feedType" value="Bottle" style="height:25px; width:25px;
-            	margin-left: 30%;"/>
-            <label for id="bottle" style="font-size: 18pt; margin-right: 1%; color:#1ca565">Bottle</label>
-            <input type="radio"  id="solids" name="feedType" value="Solids" style="height:25px; width:25px"/>
-            <label for id="solids" style="font-size: 18pt;margin-right: 1%; color:#1ca565">Solids</label>
-            <input type="radio" id="leftb" name="feedType" value="Left Breast" style="height:25px; width:25px"/>
-            <label for id="leftb" style="font-size: 18pt;margin-right: 1%;color:#1ca565;">Left Breast</label>
-            <input type="radio" id="rightb" name="feedType" value="Right Breast" style="height:25px; width:25px"/>
-            <label for id="rightb" style="font-size: 18pt;margin-right: 1%;color:#1ca565;">Right Breast</label>
+		<form action = "${model.Pump.pId}/save" method="POST">
+		<h3 style="margin-left: 43%; color:#df375e"><strong>Update Pump Type:</strong></h3><br>
+            <input type="radio"  id="leftb" name="pumpType" value="Left Breast" style="height:25px; width:25px;
+            	margin-left: 40%;"/>
+            <label for id="leftb" style="font-size: 18pt; margin-right: 1%; color:#df375e">Left Breast</label>
+            <input type="radio"  id="rightb" name="pumpType" value="Right Breast" style="height:25px; width:25px"/>
+            <label for id="rightb" style="font-size: 18pt;margin-right: 1%; color:#df375e">Right Breast</label>    
             <br><br>
-            <input value="${model.Feed.feedTime}" type="text" class="time" name="feedTime" placeholder="Time" style="width:20%;"/>
-            <input value="${model.Feed.feedAmount}" type="text" class="amount" name="feedAmount" placeholder="Amount" style="width:20%;"/>
-            <input  value="${model.Feed.feedDate}" type="text" class="date" name="feedDate" placeholder="Date" style="width:20%;"/>
-            <input value ="${model.Feed.id}" name="feedId" type="hidden" />
-            <button type="submit" class="submit" style="background-color:#1ca565; width: 8%; border-radius: 25px;">Submit</button>
+            <h3 style="margin-left: 37%; color:#df375e"><strong>Update Pump Time, Amount and Date:</strong></h3><br>
+            <input value="${model.Pump.pumpTime}" type="text" class="time" name="pumpTime" placeholder="Time" style="width:20%; margin-left:17%;"/>
+            <input value="${model.Pump.pumpAmount}" type="text" class="date" name="pumpAmount" placeholder="Amount" style="width:20%;"/>
+            <input  value="${model.Pump.pumpDate}" type="text" class="date" name="pumpDate" placeholder="Date" style="width:20%;"/>
+            <input value ="${model.Pump.pId}" name="diaperDid" type="hidden" /><br><br>
+            <button type="submit" class="submit" style="background-color:#df375e; margin-left:45%; width: 8%; border-radius: 25px;">Submit</button>
         </form>
        </div>
 </body>

@@ -19,6 +19,31 @@
     <!-- GoogleFont -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    	<style>
+		.footer-basic {
+			padding: 40px 0;
+			background-color: #ffffff;
+			color: #4b4c4d;
+			margin-top:40px;
+		}
+		
+		.footer-basic ul {
+			padding: 0;
+			list-style: none;
+			text-align: center;
+			font-size: 18px;
+			line-height: 1.6;
+			margin-bottom: 0;
+		}
+		
+		.footer-basic .copyright {
+			margin-top: 15px;
+			text-align: center;
+			font-size: 16px;
+			color: #aaa;
+			margin-bottom: 0;
+		}
+	</style> 
     <title>Bambii</title>
 </head>
 
@@ -32,6 +57,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="home">Home</a></li>
                 <li><a href="aboutUs">About Us</a></li>
+                <li><a href="resources">Resources</a></li>
                 <li><a href="index">Log Out</a></li>
             </ul>
         </nav>
@@ -51,9 +77,37 @@
         <h2 id="sleep-head" style="margin-top:70pt; margin-bottom:20px;">Sleep Entries:</h2>
          <c:forEach items = "${model.sleepEntry}" var = "sleep">
    		 		<p style="background-color:#1190df; color:white; text-align:center; font-size:16pt;" >
-   		 		Start: ${sleep.sleepStart} End: ${sleep.sleepEnd} Date: ${sleep.sleepDate} 
+   		 		Start Time: ${sleep.sleepStart} End Time: ${sleep.sleepEnd} Date: ${sleep.sleepDate} 
+   		 		
+   		 	<div style= "display: flex;">
+			<form>
+				<button type="button" onClick="window.location='editSleep/${sleep.sId}'" style="border: #ff9800; color: #ff9800;
+				font-size: 16pt; margin-left: 750px; width: 80px; height: 65px; border: 2px solid; border-radius: 10px;  text-align:center; ">
+				Edit</button>
+			</form>
+			<form action="deleteSleep" method="POST">
+				<input type="submit" value="Delete" style="border: #f44336; color: red; font-size: 16pt;
+					border-radius: 10px; height: 64px; margin-left: 20px; border: 2px solid; margin-top: 9px";/> 
+				<input name="deletesId" value=${sleep.sId} type="hidden" />
+			</form>
+			</div>
    		 		</p>
     		</c:forEach>
     </div>
+     <div class="footer-basic">
+        <footer>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="home">Home</a></li>
+                <li class="list-inline-item"><a href="home">Services</a></li>
+                <li class="list-inline-item"><a href="aboutUs">About Us</a></li>
+                <li class="list-inline-item"><a href="home">Terms</a></li>
+                <li class="list-inline-item"><a href="home">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Bambii © 2021</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

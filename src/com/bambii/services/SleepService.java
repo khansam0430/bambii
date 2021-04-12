@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bambii.dao.AbstractDAO;
 import com.bambii.dao.SleepDao;
+import com.bambii.entities.Feeding;
 import com.bambii.entities.Sleep;
 
 
@@ -64,18 +65,35 @@ public class SleepService extends AbstractDAO implements SleepDao{
 			dispose();
 		}
 	}
+	
+	public Sleep getSleepById(int sId) {
+		Sleep result = null;
+		//Step 1. Connect to DB
+		connect();
+
+		//Step 2. Execute Transaction
+		try {
+			em.getTransaction().begin();
+			result = em.find(Sleep.class, sId);
+			em.getTransaction().commit();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			//Step 3. Disconnect
+			dispose();
+		}
+		return result;
+	}
 
 	@Override
-	public boolean updateSleep(Integer sId, String sleepStart, String sleepEnd, String sleepDate) {
+	public boolean updateSleep(Integer sId, Sleep sleep) {
 		connect();
 		try {
 			em.getTransaction().begin();
 			Sleep findSleep = em.find(Sleep.class, sId);
-			findSleep.setsId(sId);
-			findSleep.setSleepStart(sleepStart);
-			findSleep.setSleepEnd(sleepEnd);
-			findSleep.setSleepDate(sleepDate);
-			em.persist(findSleep);
+			findSleep.setSleepStart(sleep.getSleepStart());
+			findSleep.setSleepEnd(sleep.getSleepEnd());
+			findSleep.setSleepDate(sleep.getSleepDate());
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {

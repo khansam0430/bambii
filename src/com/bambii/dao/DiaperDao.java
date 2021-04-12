@@ -7,6 +7,9 @@ import com.bambii.entities.Diaper;
 public interface DiaperDao {
 	//get all entries
 	public List<Diaper> getAllDiaper();
+	
+	//get diaper by Id
+	public Diaper getDiaperById(int dId);
 
 	//insert an entry
 	public void addDiaper (Diaper diaper) throws Exception;
@@ -15,7 +18,6 @@ public interface DiaperDao {
 	public boolean removeDiaper(int dId);
 
 	//update an entry
-	public boolean updateDiaper(int dId, String diaperType, String diaperTime, 
-			String diaperDate, String diaperNotes);
+	public boolean updateDiaper(Integer dId, Diaper diaper);
 
 }

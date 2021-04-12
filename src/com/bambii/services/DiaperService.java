@@ -53,8 +53,7 @@ public class DiaperService extends AbstractDAO implements DiaperDao{
 		connect();
 		try {
 			em.getTransaction().begin();
-			
-			Feeding removeDiaperEntry = em.find(Feeding.class, dId);
+			Diaper removeDiaperEntry = em.find(Diaper.class, dId);
 			em.remove(removeDiaperEntry);
 			em.getTransaction().commit();
 			return true;
@@ -65,18 +64,36 @@ public class DiaperService extends AbstractDAO implements DiaperDao{
 			dispose();
 		}
 	}
+	
+	public Diaper getDiaperById(int dId) {
+		Diaper result = null;
+		//Step 1. Connect to DB
+		connect();
+
+		//Step 2. Execute Transaction
+		try {
+			em.getTransaction().begin();
+			result = em.find(Diaper.class, dId);
+			em.getTransaction().commit();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			//Step 3. Disconnect
+			dispose();
+		}
+		return result;
+	}
 
 	@Override
-	public boolean updateDiaper(int dId, String diaperType, String diaperTime, 
-			String diaperDate, String diaperNotes) {
+	public boolean updateDiaper(Integer dId, Diaper diaper) {
 		connect();
 		try {
 			em.getTransaction().begin();
 			Diaper findDiaper = em.find(Diaper.class, dId);
-			findDiaper.setDiaperType(diaperType);
-			findDiaper.setDiaperTime(diaperTime);
-			findDiaper.setDiaperDate(diaperDate);
-			findDiaper.setDiaperNotes(diaperNotes);
+			findDiaper.setDiaperType(diaper.getDiaperType());
+			findDiaper.setDiaperTime(diaper.getDiaperTime());
+			findDiaper.setDiaperDate(diaper.getDiaperDate());
+			findDiaper.setDiaperNotes(diaper.getDiaperNotes());
 			em.persist(findDiaper);
 			em.getTransaction().commit();
 			return true;
