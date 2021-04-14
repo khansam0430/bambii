@@ -47,7 +47,7 @@
 			text-align: center;
 			font-size: 16px;
 			color: #aaa;
-			margin-bottom: 0;
+			
 		}
 	</style> 
 <title>Bambii</title>
